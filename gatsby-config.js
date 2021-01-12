@@ -16,6 +16,7 @@ module.exports = {
       },
     },
     {
+      // We need this plugin in order to make gatsby a PWA. It allows users to add the site to the homescreen on most web browsers
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Starter Blog`,
@@ -28,11 +29,15 @@ module.exports = {
       },
     },
     {
+      // This plugin tells your app where to find your typography.js file
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-offline`
+    // We need this plugin in order to make gatsby a PWA
+    //  This makes gatsby resistant to bad networks connections and makes it possible for gatsby apps to work offline, it's recommended to use along with the "gatsby-plugin-manifest" and set it up in the gatsby-config.js file somewhere below the manifest plugin.
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`
   ],
 }
