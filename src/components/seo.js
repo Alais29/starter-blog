@@ -10,7 +10,8 @@ function SEO({ description, lang, meta, title }) {
 				site {
 					siteMetadata {
 						description
-						author
+						author,
+						siteUrl
 					}
 				}
 			}
@@ -43,7 +44,11 @@ function SEO({ description, lang, meta, title }) {
 				},
 				{
 					name: `twitter:card`,
-					content: `summary`
+					content: `summary_large_image`
+				},
+				{
+					name: `twitter:image`,
+					content: `${site.siteMetadata.siteUrl}'WILLADDPATHLATER'twitter-card.jpg`
 				},
 				{
 					name: `twitter:creator`,

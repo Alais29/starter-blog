@@ -5,12 +5,27 @@ ___Created by Rachelle Rathbone___.
 ### Source Plugins
 **What was covered in this section:**
 - What is a source plugin and what do they do?
+
+  Plugins that source data for you, they can get it from a variety of places like: databases, API, local files, cms, etc. For example, we have the gatsby-source-filesystem plugin
+
 - Writing a query to retrieve filesystem data
 - Updating our config to retrieve more filesystem data
+- Some source plugins available through gatsby:
+  - gatsby-source-mongodb
+  - gatsby-source-wordpress
+  - gatsby-source-google-sheets
+  - gatsby-source-google-instagram
+  - gatsby-source-google-hacker-news
+  - gatsby-source-google-json
+  - gatsby-source-google-mysql
+  - gatsby-source-google-twitter
 
 ### Transformer Plugins
 **What was covered in this section:**
 - The role of the transformer plugin
+
+  Plugins that transform the data provided by the source plugins, it allows us to get the data in the files.
+
 - Installing our first transformer plugin and updating our config
 - Writing a GraphQL query to get the content from our markdown file
 
