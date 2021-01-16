@@ -53,7 +53,10 @@ module.exports = {
 							xMargin: 24, // Edge margin used when x value is not set
 							yMargin: 24 // Edge margin used when y value is not set
 						}
-					}
+					},
+					`gatsby-remark-prismjs`,
+					`gatsby-remark-smartypants`,
+					`gatsby-remark-copy-linked-files`
 				]
 			}
 		},

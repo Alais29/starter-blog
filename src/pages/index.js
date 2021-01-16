@@ -11,36 +11,23 @@ class BlogIndex extends React.Component {
 		const blogTitle = data.site.siteMetadata.title;
 		const authorName = data.site.siteMetadata.author;
 		const bio = data.site.siteMetadata.bio;
+		const posts = data.allMarkdownRemark.edges;
 
 		return (
 			<Layout title={blogTitle} subtitle="Built with React and Gatsby">
 				<SEO title="All posts" />
 				<div className="blog-container">
 					<section>
-						<div className="post-summary">
-							<p>May 4th, 2019</p>
-							<h2>Cheddar cheese and biscuits</h2>
-							<p>
-								Cheese and wine rubber cheese airedale cottage cheese the big cheese stinking bishop
-								cheesecake st. agur blue cheese. Cow rubber cheese cheese triangles say cheese cheese on
-								toast cheddar red leicester swiss.{' '}
-							</p>
-							<Link to="/cheddar-cheese">
-								<button>Read more</button>
-							</Link>
-						</div>
-						<div className="post-summary">
-							<p>May 13th, 2019</p>
-							<h2>Cheese on toast babybel babybel</h2>
-							<p>
-								Pecorino fondue manchego who moved my cheese babybel hard cheese fromage roquefort.
-								Roquefort port-salut cheeseburger cheese on toast jarlsberg red leicester chalk and
-								cheese fromage.
-							</p>
-							<Link to="/toast-babybel">
-								<button>Read more</button>
-							</Link>
-						</div>
+						{posts && posts.map(post => (
+							<div className="post-summary" key={post.node.id}>
+								<p>{post.node.frontmatter.date}</p>
+								<h2>{post.node.frontmatter.title}</h2>
+								<p>{post.node.excerpt}</p>
+								<Link to={post.node.fields.slug}>
+									<button>Read more</button>
+								</Link>
+							</div>
+						))}
 					</section>
 					<aside>
 						<p>We'll put a profile pic here later</p>
@@ -62,6 +49,21 @@ export const pageQuery = graphql`
 				title
 				author
 				bio
+			}
+		}
+		allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+			edges {
+				node {
+					id
+					excerpt(pruneLength: 200)
+					fields {
+						slug
+					}
+					frontmatter {
+						title
+						date(formatString: "MMMM DD, YYYY")
+					}
+				}
 			}
 		}
 	}
