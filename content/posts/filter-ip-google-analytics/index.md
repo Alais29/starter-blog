@@ -14,7 +14,7 @@ Select an appropriate name for your filter. I’ll call mine `My Home IP` as I w
 - Select filter type: Exclude
 - Select source or destination: traffic from the IP addresses
 - Select expression: that are equal to
-![Filters](./filte-info.png)
+![Filters](./filter-info.png)
 
 Now you’ll need your IP address. To get this, open a new tab and type ‘my ip’ and hit enter. At the top of the results you should see your public IP address. Copy that, head back to GA and paste it into the input field under `IP address`.
 

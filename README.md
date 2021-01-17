@@ -11,7 +11,7 @@ ___Created by Rachelle Rathbone___.
 - Updating our index file to consume the image from our data
 
 **Resources:**
-- Install [gatsby-transformer-sharp](https://www.gatsbyjs.org/packages/gatsby-transformer-sharp/) and [gatsby-plugin-sharp](https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/)
+- Install [gatsby-transformer-sharp](https://www.gatsbyjs.org/packages/gatsby-transformer-sharp/) (allows us to query images with graphql) and [gatsby-plugin-sharp](https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/) (uses the sharp image processing library to let us to easily compress and resize our images)
 
 ### Using Gatsby Image
 **What was covered in this section:**

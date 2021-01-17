@@ -77,7 +77,7 @@ export const pageQuery = graphql`
 				}
 			}
 		}
-		profilePic: file(absolutePath: { regex: "/profile-pic.png/" }) {
+		profilePic: file(absolutePath: {regex: "/profile-pic.png/"}) {
 			childImageSharp {
 				fluid(maxWidth: 400, maxHeight: 300) {
 					...GatsbyImageSharpFluid
